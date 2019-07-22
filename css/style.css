@@ -1,0 +1,108 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	min-width: 300px;
+}
+
+.container {
+	width: 100%;
+}
+
+.banner {
+	position: relative;
+}
+
+.banner__content {
+	position: relative;	
+}
+
+.banner__slide {
+	display: block;
+	width: 100%;
+	position: relative;	
+}
+
+
+.slide__img {
+	width: 100%;
+}
+
+.banner__nav {
+	display: flex;
+	position: absolute;
+	top: 42%;
+	width: 60px;
+	height: 60px;
+	padding: 5px;
+	background-color: rgba(255, 0, 0, 0.5);
+	cursor: pointer;
+}
+
+.banner__nav:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.banner__nav--left {
+	left: 0;
+}
+
+.banner__nav--right {
+	right: 0;
+}
+
+.banner__nav--left .nav__img {
+	transform: rotate(180deg);
+}
+
+.nav__img{
+	width: 40%;
+	margin: auto;
+	opacity: 0.7;
+}
+
+.paginator {
+	list-style: none;
+	display: flex;
+	padding: 0;
+}
+
+.banner__paginator {	
+	position: absolute;	
+	display: flex;
+	justify-content: space-around;
+	left: 50%;
+	right: 50%;
+	bottom: 0;
+}
+
+.paginator__item {
+
+	
+}
+
+.paginator__btn {	
+	width: 15px;
+	height: 15px;
+	background-color: white;
+	opacity: 0.8;
+	border: none;
+	border-radius: 15px;
+	margin-right: 10px;	
+	cursor: pointer;
+}
+
+.paginator__btn--active {
+	background-color: orange;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important; 
+    width: 1px !important; 
+    overflow: hidden;
+}
