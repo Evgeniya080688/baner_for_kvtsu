@@ -20,12 +20,16 @@ html, body {
 .banner__slide {
 	display: block;
 	width: 100%;
-	position: relative;	
+	position: relative;
+	
 }
-
 
 .slide__img {
 	width: 100%;
+}
+
+.banner__slide--activ {
+
 }
 
 .banner__nav {
@@ -41,6 +45,7 @@ html, body {
 
 .banner__nav:hover {
 	background-color: rgba(0, 0, 0, 0.8);
+	transition: background-color 1s;
 }
 
 .banner__nav--left {
@@ -94,6 +99,10 @@ html, body {
 
 .paginator__btn--active {
 	background-color: orange;
+	transition: 1s
+    -webkit-transition-timing-function: ease-in-out
+    -o-transition-timing-function: ease-in-out
+    transition-timing-function: ease-in-out	
 }
 
 .visually-hidden {
@@ -105,4 +114,5 @@ html, body {
     height: 1px !important; 
     width: 1px !important; 
     overflow: hidden;
+    transition: width 3s;
 }
