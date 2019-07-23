@@ -14,22 +14,24 @@ html, body {
 }
 
 .banner__content {
+	display: flex;
 	position: relative;	
+	width: 100%;
 }
 
 .banner__slide {
-	display: block;
-	width: 100%;
-	position: relative;
-	
+	width: 0;
+	opacity: 0.5;	
 }
 
 .slide__img {
 	width: 100%;
 }
 
-.banner__slide--activ {
-
+.banner__slide--active {
+	width: 100%;
+	opacity: 1;
+	transition: opacity 0.6s;
 }
 
 .banner__nav {
@@ -114,5 +116,4 @@ html, body {
     height: 1px !important; 
     width: 1px !important; 
     overflow: hidden;
-    transition: width 3s;
 }

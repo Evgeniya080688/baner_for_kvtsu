@@ -9,18 +9,6 @@ var arrPaginator = [];
 var arrButtons = [];
 var index = 0;
 
-function setHidden(arr) {
-	for (var i=0; i< arr.lenght; i++) {
-		arr[i].classList.add('visually-hidden');
-	}
-}
-
-function noActiv(arr) {
-	for (var i=0; i< arr.lenght; i++) {
-		arr[i].classList.remove('paginator__btn--active');
-		console.log('work');
-	}
-}
 
 function nextSlide() {
 	if (index < arrCarusel.length-1) {
@@ -30,11 +18,11 @@ function nextSlide() {
 		index = 0;
 	}
 	arrButtons[index].classList.add('paginator__btn--active');
-	arrCarusel[index].classList.remove('visually-hidden');
+	arrCarusel[index].classList.add('banner__slide--active');
 	for (var i=0; i< arrButtons.length; i++ ) {
 		if (i != index) {
 			arrButtons[i].classList.remove('paginator__btn--active');
-			arrCarusel[i].classList.add('visually-hidden');
+			arrCarusel[i].classList.remove('banner__slide--active');
 		}
 	}
 }
@@ -47,11 +35,11 @@ function prevSlide() {
 		index = arrCarusel.length-1;
 	}
 	arrButtons[index].classList.add('paginator__btn--active');
-	arrCarusel[index].classList.remove('visually-hidden');
+	arrCarusel[index].classList.add('banner__slide--active');
 	for (var i=0; i< arrButtons.length; i++ ) {
 		if (i != index) {
 			arrButtons[i].classList.remove('paginator__btn--active');
-			arrCarusel[i].classList.add('visually-hidden');
+			arrCarusel[i].classList.remove('banner__slide--active');
 		}
 	}
 }
@@ -68,7 +56,7 @@ for (var i=0; i<arrCarusel.length; i++) {
 //
 paginatorArrEl = document.querySelectorAll('.paginator__btn');
 paginatorArrEl[index].classList.add('paginator__btn--active');
-arrCarusel[index].classList.remove('visually-hidden');
+arrCarusel[index].classList.add('banner__slide--active');
 
 
 for (var i=0; i<arrCarusel.length; i++) {
@@ -90,16 +78,20 @@ paginatorEl.addEventListener('click', function(event) {
 		event.target.classList.add('paginator__btn--active');
 
 		index = arrButtons.indexOf(event.target);
-		arrCarusel[index].classList.remove('visually-hidden');
+		arrCarusel[index].classList.add('banner__slide--active');
 		for (var i=0; i< arrButtons.length; i++ ) {
 			if (i != index) {
 				arrButtons[i].classList.remove('paginator__btn--active');
-				arrCarusel[i].classList.add('visually-hidden');
+				arrCarusel[i].classList.remove('banner__slide--active');
 			}
 		}
 		
 	}
 });	
+
+setInterval(function() {
+  nextSlide();
+}, 5000);
 
 // listTaskEl.addEventListener('click', function(event) {
 // 	if (event.target.tagName == 'LI') {
